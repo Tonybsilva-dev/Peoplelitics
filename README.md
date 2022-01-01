@@ -26,7 +26,7 @@
   <h3 align="center">Peoplelitics</h3>
 
   <p align="center">
-    Your "To Do" search engine in your city
+    Your search engine for "Political Doings" in your city
     <br />
     <a href="https://github.com/Tonybsilva-dev/Peoplelitics"><strong>Explore the docs »</strong></a>
     <br />
