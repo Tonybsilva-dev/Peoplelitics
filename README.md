@@ -153,7 +153,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- CONTACT -->
-### Autor
+### Author
 ---
 
 <a href="https://dev.to/tonybsilvadev/">
