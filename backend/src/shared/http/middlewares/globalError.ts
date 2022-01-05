@@ -1,13 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 import AppError from '../errors/AppError';
 
-function globalErrors(err: Error, request: Request, response: Response, next: NextFunction) {
+function globalError(err: Error, request: Request, response: Response, next: NextFunction) {
 
   if (err instanceof AppError) {
     response.status(err.statusCode).json({
       status: 'error',
       message: err.message,
-      data: err?.data
     });
   }
 
@@ -20,4 +19,4 @@ function globalErrors(err: Error, request: Request, response: Response, next: Ne
 
 }
 
-export { globalErrors };
+export { globalError };
