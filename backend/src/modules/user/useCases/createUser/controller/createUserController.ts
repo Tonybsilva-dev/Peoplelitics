@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { CreateUserService } from '../services/createClientService';
+import { CreateUserService } from '../services/createUserService';
 
 
 
@@ -10,9 +10,9 @@ export class CreateUserController{
 
         const { name, email, password } = request.body
 
-        const createClientUseCase = new CreateUserService;
+        const createUserService = new CreateUserService;
 
-        const result = await createClientUseCase.execute({ name, email, password })
+        const result = await createUserService.execute({ name, email, password })
 
         return response.json(result)
 
