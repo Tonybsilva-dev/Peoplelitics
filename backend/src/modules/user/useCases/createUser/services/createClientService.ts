@@ -1,4 +1,5 @@
 import { hash } from 'bcrypt';
+import AppError from '../../../../../shared/http/errors/AppError';
 import { prisma } from '../../../../../shared/infra/database/prismaClient';
 
 
@@ -29,11 +30,11 @@ export class CreateUserService {
         });
 
         if (emailAlredyExists){
-            throw new Error('Email already exists')
+            throw new AppError('Email already exists')
         }
 
         if (nameAlredyExists){
-            throw new Error('Name already exists')
+            throw new AppError('Name already exists')
         }
 
         const hashPassword = await hash(password, 10)
