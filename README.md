@@ -28,14 +28,14 @@
   <p align="center">
     Your search engine for "Political Doings" in your city
     <br />
-    <a href="https://github.com/Tonybsilva-dev/Peoplelitics"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Tonybsilva-dev/Peoplelitics/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Tonybsilva-dev/Peoplelitics">View Demo</a>
+    <a href="https://github.com/Tonybsilva-dev/Peoplelitics/">View Demo</a>
     ·
-    <a href="https://github.com/Tonybsilva-dev/Peoplelitics">Report Bug</a>
+    <a href="https://github.com/Tonybsilva-dev/Peoplelitics/">Report Bug</a>
     ·
-    <a href="https://github.com/Tonybsilva-dev/Peoplelitics">Request Feature</a>
+    <a href="https://github.com/Tonybsilva-dev/Peoplelitics/">Request Feature</a>
   </p>
 </p>
 
@@ -128,7 +128,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com//Asynnc/LeafBarber-frontend/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Tonybsilva-dev/Peoplelitics/issues) for a list of proposed features (and known issues).
 
 
 
