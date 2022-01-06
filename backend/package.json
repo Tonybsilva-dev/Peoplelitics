@@ -7,7 +7,7 @@
   "author": "Antonio Bernardino da Silva <tonybsilvadev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --exit-child --transpile-only --ignore-watch node_modules src/shared/http/server.ts"
+    "dev": "tsnd --exit-child --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

@@ -1,9 +1,8 @@
 import { hash } from 'bcrypt';
-import AppError from '../../../../../shared/http/errors/AppError';
 import { prisma } from '../../../../../shared/infra/database/prismaClient';
 
 
-interface createClient {
+interface createUser {
     name: string,
     email: string;
     password: string;
@@ -12,29 +11,26 @@ interface createClient {
 
 
 export class CreateUserService {
-    async execute({ name , email , password }: createClient){
+    async execute({ name , email , password }: createUser){
 
         const emailAlredyExists = await prisma.users.findFirst({
             where: {
-                email: {
-                    mode: "insensitive"
-                }
+                email: email
             }
         });
+        
         const nameAlredyExists = await prisma.users.findFirst({
             where: {
-                name: {
-                    mode: "insensitive"
-                }
+                name: name
             }
         });
 
         if (emailAlredyExists){
-            throw new AppError('Email already exists')
+            throw new Error('Email already exists')
         }
 
         if (nameAlredyExists){
-            throw new AppError('Name already exists')
+            throw new Error('Name already exists')
         }
 
         const hashPassword = await hash(password, 10)
