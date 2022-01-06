@@ -11,7 +11,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -175,7 +174,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [stars-url]: https://github.co/Tonybsilva-dev/Peoplelitics/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Tonybsilva-dev/Peoplelitics.svg?style=for-the-badge
 [issues-url]: https://github.com/Tonybsilva-dev/Peoplelitics/issues
-[license-shield]: https://img.shields.io/github/licens/Tonybsilva-dev/Peoplelitics.svg?style=for-the-badge
 [license-url]: https://github.com/Tonybsilva-dev/Peoplelitics/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tony-silva/
