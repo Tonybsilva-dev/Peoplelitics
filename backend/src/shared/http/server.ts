@@ -9,10 +9,10 @@ import routes from './routes';
 
 
 const app = express();
-
-app.use(express.json());
-app.use(logRequest)
 app.use(cors())
+app.use(express.json());
+
+app.use(logRequest)
 app.use(globalError)
 app.use('/api', routes)
 
