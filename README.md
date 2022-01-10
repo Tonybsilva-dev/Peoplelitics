@@ -19,7 +19,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Tonybsilva-dev/Peoplelitics">
-    <img src="https://i.imgur.com/7FHpdO1.png" alt="Logo">
+    <img src="https://i.imgur.com/7FHpdO1.png" alt="Logo" width="300">
   </a>
 
   <h3 align="center">Peoplelitics</h3>
