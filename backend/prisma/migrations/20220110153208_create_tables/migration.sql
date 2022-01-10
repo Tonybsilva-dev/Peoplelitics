@@ -1,0 +1,10 @@
+-- AlterTable
+ALTER TABLE "permissions" ALTER COLUMN "name" SET DATA TYPE TEXT;
+
+-- AlterTable
+ALTER TABLE "roles" ALTER COLUMN "name" SET DATA TYPE TEXT;
+
+-- AlterTable
+ALTER TABLE "users" ALTER COLUMN "name" SET DATA TYPE TEXT,
+ALTER COLUMN "password" SET DATA TYPE TEXT,
+ALTER COLUMN "avatar" SET DATA TYPE TEXT;

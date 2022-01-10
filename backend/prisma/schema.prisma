@@ -8,33 +8,79 @@ datasource db {
 }
 
 model Users {
-  id         String   @id @default(uuid())
-  name       String   
-  email      String   @unique
-  password   String   
-  avatar     String?  
-  created_at DateTime @default(now())
-  updated_at DateTime @default(now())
+  id          String             @id @default(uuid())
+  name        String
+  email       String             @unique
+  password    String
+  avatar      String?
+  created_at  DateTime           @default(now())
+  updated_at  DateTime           @default(now())
+  permissions UsersPermissions[]
+  roles       UsersRoles[]
 
   @@map("users")
 }
 
 model Roles {
-  id          String   @id @default(uuid())
-  name        String   
-  description String   @unique
-  created_at  DateTime @default(now())
-  updated_at  DateTime @default(now())
+  id          String             @id @default(uuid())
+  name        String
+  description String             @unique
+  created_at  DateTime           @default(now())
+  updated_at  DateTime           @default(now())
+  permissions PermissionsRoles[]
+  users       UsersRoles[]
 
   @@map("roles")
 }
 
 model Permissions {
-  id          String   @id @default(uuid())
-  name        String   
-  description String   @unique
-  created_at  DateTime @default(now())
-  updated_at  DateTime @default(now())
+  id          String             @id @default(uuid())
+  name        String
+  description String             @unique
+  created_at  DateTime           @default(now())
+  updated_at  DateTime           @default(now())
+  users       UsersPermissions[]
+  roles       PermissionsRoles[]
 
   @@map("permissions")
+}
+
+model UsersPermissions {
+  id_permission String
+  permission    Permissions @relation(fields: [id_permission], references: [id])
+  id_user       String
+  user          Users       @relation(fields: [id_user], references: [id])
+  created_at    DateTime    @default(now())
+  updated_at    DateTime    @default(now())
+
+
+
+  @@id([id_permission, id_user])
+  @@map("users_permissions")
+}
+
+model PermissionsRoles {
+  id_permission String
+  permission    Permissions @relation(fields: [id_permission], references: [id])
+  id_role       String
+  role          Roles       @relation(fields: [id_role], references: [id])
+  created_at    DateTime    @default(now())
+  updated_at    DateTime    @default(now())
+
+
+  @@id([id_permission, id_role])
+  @@map("permissions_roles")
+}
+
+model UsersRoles {
+  id_user    String
+  user       Users    @relation(fields: [id_user], references: [id])
+  id_role    String
+  role       Roles    @relation(fields: [id_role], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+
+  @@id([id_role, id_user])
+  @@map("users_roles")
 }
