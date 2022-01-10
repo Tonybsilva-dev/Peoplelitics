@@ -1,15 +1,15 @@
 import { Router } from 'express';
-import { CreateUserController } from '../../../useCases/createUser/controller/createUserController';
-import { FindUserController } from '../../../useCases/findUser/controller/findUserController';
+import { UserController } from '../../../controller';
 
 
 
-const createClientController = new CreateUserController();
-const findUserController = new FindUserController();
+
+const userController = new UserController();
 
 const usersRouter = Router();
 
-usersRouter.post('/', createClientController.create)
-usersRouter.post('/find', findUserController.index)
+usersRouter.post('/', userController.create)
+usersRouter.post('/find', userController.index)
+usersRouter.post('/auth', userController.auth)
 
 export { usersRouter };
