@@ -167,7 +167,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Lucianjfc"><img src="https://avatars.githubusercontent.com/u/48529800?v=4" width="100px;" alt=""/><br /><sub><b>Lucian Julio</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=Lucianjfc" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3ALucianjfc" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>x
+    <td align="center"><a href="https://github.com/Lucianjfc"><img src="https://avatars.githubusercontent.com/u/48529800?v=4" width="100px;" alt=""/><br /><sub><b>Lucian Julio</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/Tonybsilva-dev/Peoplelitics/commits?author=Lucianjfc" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3ALucianjfc" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>x
   </tr>
 </table>
 
