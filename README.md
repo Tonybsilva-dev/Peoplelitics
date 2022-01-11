@@ -179,7 +179,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [forks-shield]: https://img.shields.io/github/forks/Tonybsilva-dev/Peoplelitics.svg?style=for-the-badge
 [forks-url]: https://github.com/Tonybsilva-dev/Peoplelitics/network/members
 [stars-shield]: https://img.shields.io/github/stars/Tonybsilva-dev/Peoplelitics.svg?style=for-the-badge
-[stars-url]: https://github.co/Tonybsilva-dev/Peoplelitics/stargazers
+[stars-url]: https://github.com/Tonybsilva-dev/Peoplelitics/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Tonybsilva-dev/Peoplelitics.svg?style=for-the-badge
 [issues-url]: https://github.com/Tonybsilva-dev/Peoplelitics/issues
 [license-url]: https://github.com/Tonybsilva-dev/Peoplelitics/blob/master/LICENSE.txt
