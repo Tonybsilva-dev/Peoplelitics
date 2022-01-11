@@ -1,6 +1,6 @@
 import { hash } from 'bcrypt';
 import AppError from '../../../../../shared/http/errors/AppError';
-import { prisma } from '../../../../../shared/infra/database/prismaClient';
+import { prisma } from '../../../../../shared/infra/database/prisma/prismaClient';
 import { checkPasswordSecurity } from '../../../functions/checkPasswordSecurity';
 
 interface createUser {
