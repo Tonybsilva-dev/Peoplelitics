@@ -8,7 +8,7 @@ const userController = new UserController();
 
 const usersRouter = Router();
 
-usersRouter.post('/', userController.create)
+usersRouter.post('/', userController.store)
 usersRouter.post('/find', userController.index)
 usersRouter.post('/auth', userController.auth)
 
