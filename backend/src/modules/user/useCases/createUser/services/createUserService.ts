@@ -1,6 +1,7 @@
 import { hash } from 'bcrypt';
 import AppError from '../../../../../shared/http/errors/AppError';
 import { prisma } from '../../../../../shared/infra/database/prismaClient';
+import { checkPasswordSecurity } from '../../../functions/checkPasswordSecurity';
 
 interface createUser {
     name: string,
@@ -29,6 +30,12 @@ export class CreateUserService {
 
         if (nameAlredyExists){
             throw new AppError('Name already exists')
+        }
+
+        const checkPass = checkPasswordSecurity(password)
+
+        if(!checkPass){
+            throw new AppError('Your password does not meet the minimum requirements.')
         }
 
         const hashPassword = await hash(password, 10)
