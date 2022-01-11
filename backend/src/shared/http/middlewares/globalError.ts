@@ -19,4 +19,4 @@ function globalError(err: Error, request: Request, response: Response, next: Nex
 
 }
 
-export { globalError };
+export default globalError;
