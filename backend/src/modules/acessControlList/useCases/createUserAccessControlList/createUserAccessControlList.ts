@@ -21,10 +21,14 @@ class CreateUserAccessControlList {
             throw new AppError("User does not exists", 404);
         }
 
-        const roleExists = await prisma.roles.findFirst({
-            where: {
-                id
-            }
+        let manyRoles = roles.forEach(role => {
+            role
+        });
+
+        const roleExists = await prisma.usersRoles.createMany({
+            data: [
+                
+            ]
         });
 
         const permissionExists = await prisma.permissions.findFirst({
