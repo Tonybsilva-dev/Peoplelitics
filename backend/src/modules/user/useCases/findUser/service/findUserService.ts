@@ -1,4 +1,4 @@
-import { prisma } from '../../../../../shared/infra/database/prismaClient';
+import { prisma } from '../../../../../shared/infra/database/prisma/prismaClient';
 
 
 interface findUser {

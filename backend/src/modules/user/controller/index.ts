@@ -6,7 +6,7 @@ import { FindUserService } from '../useCases/findUser/service/findUserService';
 
 export class UserController{
 
-    async create(request: Request, response: Response){
+    async store(request: Request, response: Response){
 
         const { name, email, password } = request.body
 
@@ -30,11 +30,11 @@ export class UserController{
 
     async auth(request: Request, response: Response){
 
-        const { email, password } = request.body
+        const { email, password, latitude, longitude } = request.body
 
         const authenticatedUserService = new AuthenticatedUserService;
 
-        const result = await authenticatedUserService.execute({ email, password })
+        const result = await authenticatedUserService.execute({ email, password, latitude, longitude })
 
         return response.json(result)
     }
