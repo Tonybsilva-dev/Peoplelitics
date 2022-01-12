@@ -13,8 +13,8 @@ app.use(cors())
 app.use(express.json());
 
 app.use(logRequest)
-app.use(globalError)
 app.use('/api', routes)
+app.use(globalError)
 
 app.listen( process.env.PORT_SERVER  , () => {
   console.log(`✅ Server started on port ${ process.env.PORT_SERVER }`)
