@@ -1,5 +1,5 @@
 import AppError from '../../../../shared/http/errors/AppError';
-import { prisma } from '../../../../shared/infra/database/prismaClient';
+import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
 
 interface IUserACLRequest {
     id: string;

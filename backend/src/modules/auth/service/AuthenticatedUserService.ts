@@ -1,9 +1,9 @@
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import AuthConfig from '../../../../../config/auth';
-import AppError from '../../../../../shared/http/errors/AppError';
-import AccessUserSchema from '../../../../../shared/infra/database/mongoDB/models/Acess';
-import { prisma } from "../../../../../shared/infra/database/prisma/prismaClient";
+import AuthConfig from '../../../config/auth';
+import AppError from '../../../shared/http/errors/AppError';
+import AccessUserSchema from '../../../shared/infra/database/mongoDB/models/Acess';
+import { prisma } from "../../../shared/infra/database/prisma/prismaClient";
 
 
 interface Request {
@@ -61,7 +61,7 @@ export class AuthenticatedUserService {
             }
 
         } catch (error) {
-            throw new AppError('Mondo DB Cloud AccessUser ontrol does not work')
+            throw new AppError('Mondo DB Cloud AccessUserControl does not work')
         }
 
         const { secret, expiresIn } = AuthConfig.jwt;
