@@ -2,7 +2,7 @@ import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import AuthConfig from '../../../config/auth';
 import AppError from '../../../shared/http/errors/AppError';
-import AccessUserSchema from '../../../shared/infra/database/mongoDB/models/Acess';
+import AccessUserSchema from '../../../shared/infra/database/mongoDB/models/Access';
 import { prisma } from "../../../shared/infra/database/prisma/prismaClient";
 
 
