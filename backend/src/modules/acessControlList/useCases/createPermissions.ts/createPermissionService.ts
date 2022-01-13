@@ -11,7 +11,7 @@ class CreatePermissionService{
     async execute({ name, description }: Request){
 
             if( name.length <= 0 || description.length <= 0){
-                throw new AppError("You must provide a name and description to permission.");
+                throw new AppError("You must provide a name and description to permission.", 400, { reason: 'O usuario nao proveu um nome ou uma descriçao para a permissão.' });
             }
 
             const checkPermissionsExists = await prisma.permissions.findFirst({
@@ -21,7 +21,7 @@ class CreatePermissionService{
             });
 
             if (checkPermissionsExists){
-                throw new AppError("Permission alredy exists");
+                throw new AppError("Permission alredy exists", 400, { reason: 'A permissão ja está cadastrada.' });
             }
 
             const permission = await prisma.permissions.create({

@@ -12,7 +12,7 @@ const options = {
     useUnifiedTopology: true
   };
   
-
+  
 try {
     mongoose.connect("mongodb+srv://people:peoplelitics@peoplelitics.iq6pe.mongodb.net/AccessControl?retryWrites=true&w=majority", options).then(
         () => console.log('✅ MongoDB Cloud connected!')

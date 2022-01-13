@@ -11,7 +11,7 @@ class CreateRoleService{
     async execute({ name, description }: Request){
 
             if( name.length <= 0 || description.length <= 0){
-                throw new AppError("You must provide a name and description to role.");
+                throw new AppError("You must provide a name and description to role.", 400, { reason: 'O usuario nao proveu um nome ou uma descriçao para a função.' });
             }
 
             const checkRoleExists = await prisma.roles.findFirst({
@@ -21,7 +21,7 @@ class CreateRoleService{
             });
 
             if (checkRoleExists){
-                throw new AppError("Role alredy exists");
+                throw new AppError("Role alredy exists", 400, { reason: 'A função ja está cadastrada.' });
             }
 
             const role = await prisma.roles.create({

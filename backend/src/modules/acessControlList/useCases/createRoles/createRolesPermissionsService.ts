@@ -17,7 +17,7 @@ class CreatePermissionsRoleService {
         });
 
         if (!role){
-            throw new AppError("Role does not exists", 404);
+            throw new AppError("Role does not exists", 404, { reason: 'A função não existe.' });
         }
            
         let dataRolePermissions : any = []

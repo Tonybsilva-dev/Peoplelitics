@@ -18,7 +18,7 @@ class CreateUserAccessControlListService {
         });
 
         if (!user){
-            throw new AppError("User does not exists", 404);
+            throw new AppError("User does not exists", 404, { reason: 'O usuario nao existe.' });
         }
            
         let dataPermissions : any = []
