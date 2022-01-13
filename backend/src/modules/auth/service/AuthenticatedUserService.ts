@@ -25,18 +25,18 @@ export class AuthenticatedUserService {
         
         const user = await prisma.users.findFirst({
             where: {
-                email: email
+                email: email.toLowerCase()
             }
         });
 
         if(!user){
-            throw new AppError("Incorrect email/password combination.", 401);
+            throw new AppError("Incorrect email/password combination.", 401, { reason: 'O usuario nao existe.' });
         }
 
         const isPasswordValid = await compare(password, user.password);
 
         if(!isPasswordValid){
-            throw new AppError("Incorrect email/password combination.", 401);
+            throw new AppError("Incorrect email/password combination.", 401, { reason: 'A senha do usuário está incorreta.' });
         }
 
         const location = {
@@ -56,8 +56,6 @@ export class AuthenticatedUserService {
                 logged_out: '',
                 location
              });
-    
-             console.log(data);
             }
 
         } catch (error) {

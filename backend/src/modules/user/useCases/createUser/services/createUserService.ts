@@ -25,25 +25,25 @@ export class CreateUserService {
         });
 
         if (emailAlredyExists){
-            throw new AppError('Email already exists')
+            throw new AppError('Email already exists', 400, { reason: 'O email ja esta cadastrado.' })
         }
 
         if (nameAlredyExists){
-            throw new AppError('Name already exists')
+            throw new AppError('Name already exists',  400, { reason: 'O nome do usuario ja esta cadastrado.' })
         }
 
         const checkPass = checkPasswordSecurity(password)
 
         if(!checkPass){
-            throw new AppError('Your password does not meet the minimum requirements.')
+            throw new AppError('Your password does not meet the minimum requirements.',  400, { reason: 'A senha nao atende aos requisitos mínimos.' })
         }
 
         const hashPassword = await hash(password, 10)
 
         const user = await prisma.users.create({
             data: {
-                name,
-                email,
+                name: name.toUpperCase(),
+                email: email.toLowerCase(),
                 password: hashPassword,
             }
         })
