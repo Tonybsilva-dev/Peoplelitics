@@ -1,15 +1,12 @@
-//atribuir N permissoes para uma Role
-
-
 import AppError from '../../../../shared/http/errors/AppError';
-import { prisma } from '../../../../shared/infra/database/prismaClient';
+import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
 
 interface IUserACLRequest {
     idRole: string;
     permissions: string[];
   }
 
-class CreateRolesPermissionsService {
+class CreatePermissionsRoleService {
 
     async execute({ idRole, permissions }: IUserACLRequest ){
 
@@ -51,4 +48,4 @@ class CreateRolesPermissionsService {
 
 }
 
-export { CreateRolesPermissionsService };
+export { CreatePermissionsRoleService };
