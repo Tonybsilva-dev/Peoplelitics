@@ -160,14 +160,16 @@ Distributed under the MIT License. See `LICENSE` for more information.
  <br />
  <sub><b>Antônio Bernardino da Silva</b></sub></a> <a href="https://dev.to/tonybsilvadev/" title="Medium".</a>
 
-
+Askizin
 
 ### Contributors
 ---
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Lucianjfc"><img src="https://avatars.githubusercontent.com/u/48529800?v=4" width="100px;" alt=""/><br /><sub><b>Lucian Julio</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/Tonybsilva-dev/Peoplelitics/commits?author=Lucianjfc" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3ALucianjfc" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>x
+    <td align="center"><a href="https://github.com/Lucianjfc"><img src="https://avatars.githubusercontent.com/u/48529800?v=4" width="100px;" alt=""/><br /><sub><b>Lucian Julio</b></sub></a><br /><a href="https://github.com/Tonybsilva-dev/Peoplelitics/commits?author=Lucianjfc" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3ALucianjfc" title="Reviewed Pull Requests">👀</a></td>
+        
+<td align="center"><a href="https://github.com/Askizin"><img src="https://avatars.githubusercontent.com/u/65999604?v=4" width="100px;" alt=""/><br /><sub><b>Lucian Julio</b></sub></a><br /><a href="https://github.com/Tonybsilva-dev/Peoplelitics/commits?author=Askizin" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3AAskizin" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
