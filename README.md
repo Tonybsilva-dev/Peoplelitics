@@ -160,8 +160,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
  <br />
  <sub><b>Antônio Bernardino da Silva</b></sub></a> <a href="https://dev.to/tonybsilvadev/" title="Medium".</a>
 
-Askizin
-
 ### Contributors
 ---
 
