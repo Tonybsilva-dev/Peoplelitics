@@ -1,22 +1,21 @@
 import { hash } from 'bcrypt';
-import AppError from '../../../../../shared/http/errors/AppError';
-import { prisma } from '../../../../../shared/infra/database/prisma/prismaClient';
+import AppError from '../../../../shared/http/errors/AppError';
+import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
 import { checkPasswordSecurity } from '../../../functions/checkPasswordSecurity';
-
-interface createUser {
-    name: string,
-    email: string;
-    password: string;
-}
+import { ICreateUserDTO } from './createUserDTO';
 
 export class CreateUserService {
-    async execute({ name , email , password }: createUser){
+    async execute({ name , email , password }: ICreateUserDTO){
 
         const emailAlredyExists = await prisma.users.findFirst({
             where: {
                 email: email
             }
         });
+
+        if (emailAlredyExists){
+            throw new AppError('Email already exists')
+        }
         
         const nameAlredyExists = await prisma.users.findFirst({
             where: {
@@ -24,18 +23,14 @@ export class CreateUserService {
             }
         });
 
-        if (emailAlredyExists){
-            throw new AppError('Email already exists', 400, { reason: 'O email ja esta cadastrado.' })
-        }
-
         if (nameAlredyExists){
-            throw new AppError('Name already exists',  400, { reason: 'O nome do usuario ja esta cadastrado.' })
+            throw new AppError('Name already exists')
         }
 
         const checkPass = checkPasswordSecurity(password)
 
         if(!checkPass){
-            throw new AppError('Your password does not meet the minimum requirements.',  400, { reason: 'A senha nao atende aos requisitos mínimos.' })
+            throw new AppError('Your password does not meet the minimum requirements.')
         }
 
         const hashPassword = await hash(password, 10)
