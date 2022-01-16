@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import { createUserController } from '../useCases/createUser';
-import { findUsersController } from "../useCases/findManyUser";
+import { findManyUserController } from "../useCases/findManyUser";
+import { findUserController } from "../useCases/findUser";
 
 const usersRouter = Router();
 
@@ -9,7 +10,11 @@ usersRouter.post('/', (request: Request, response: Response) => {
 });
 
 usersRouter.post('/find', (request: Request, response: Response) => {
-    return findUsersController.index(request, response)
+    return findManyUserController.index(request, response)
+})
+
+usersRouter.post('/find/:email', (request: Request, response: Response) => {
+    return findUserController.indexOne(request, response)
 })
 
 export { usersRouter };

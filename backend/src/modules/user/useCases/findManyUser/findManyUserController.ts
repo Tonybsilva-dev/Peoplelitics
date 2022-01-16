@@ -3,15 +3,15 @@ import { FindManyUserService } from './findManyUserService';
 
 
 export class FindManyUserController {
-  constructor(private findUserservice: FindManyUserService) { }
+  constructor(private FindManyUserService: FindManyUserService) { }
 
   async index(request: Request, response: Response): Promise<Response> {
 
     const { name } = request.body
 
-    const findUserservice = new FindManyUserService;
+    const findManyUserService = new FindManyUserService;
 
-    const result = await findUserservice.execute({ name })
+    const result = await findManyUserService.execute({ name })
 
     return response.json(result)
   }

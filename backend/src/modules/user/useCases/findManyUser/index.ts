@@ -3,10 +3,10 @@ import { FindManyUserService } from "./findManyUserService";
 
 
 
-const findUsersService = new FindManyUserService()
+const findManyUserService = new FindManyUserService()
 
-const findUsersController = new FindManyUserController(
+const findManyUserController = new FindManyUserController(
     new FindManyUserService
 )
 
-export { findUsersController, findUsersService };
+export { findManyUserController, findManyUserService };
