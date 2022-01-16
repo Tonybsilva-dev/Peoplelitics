@@ -1,9 +1,12 @@
-import { AuthController } from "../controller";
+
+import { AuthUserController } from "./AuthUserController";
 import { AuthUserService } from "./AuthUserService";
 
 
 const authUserService = new AuthUserService()
 
-const authUserController = new AuthController()
+const authUserController = new AuthUserController(
+    authUserService
+)
 
 export { authUserController, authUserService };

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import ensureAuthenticated from '../../../../../shared/http/middlewares/ensureAuthenticated';
-import { ACLController } from '../../../controller';
+import ensureAuthenticated from '../../../shared/http/middlewares/ensureAuthenticated';
+import { ACLController } from '../controller';
 
 const aclController = new ACLController;
 

@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 import { AuthUserService } from './AuthUserService';
 
 
-export class CreateUserController {
-  constructor(private authUserUseCase: AuthUserService) {}
+export class AuthUserController {
+  constructor(private authUserService: AuthUserService) {}
 
   async handle(request: Request, response: Response){
 
