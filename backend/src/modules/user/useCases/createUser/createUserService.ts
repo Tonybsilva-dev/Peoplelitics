@@ -1,7 +1,7 @@
 import { hash } from 'bcrypt';
 import AppError from '../../../../shared/http/errors/AppError';
 import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
-import { checkPasswordSecurity } from '../../../functions/checkPasswordSecurity';
+import { checkPasswordSecurity } from '../../../utils/checkPasswordSecurity';
 import { ICreateUserDTO } from './createUserDTO';
 
 export class CreateUserService {

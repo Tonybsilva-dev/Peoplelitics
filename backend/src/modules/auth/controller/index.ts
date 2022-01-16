@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { AuthenticatedUserService } from '../../auth/service/AuthenticatedUserService';
+import { AuthUserService } from '../useCase/AuthUserService';
 
 
 
@@ -9,7 +9,7 @@ export class AuthController{
 
         const { email, password, latitude, longitude } = request.body
 
-        const authenticatedUserService = new AuthenticatedUserService;
+        const authenticatedUserService = new AuthUserService;
 
         const result = await authenticatedUserService.execute({ email, password, latitude, longitude })
 

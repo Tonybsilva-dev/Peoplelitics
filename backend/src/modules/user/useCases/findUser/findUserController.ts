@@ -3,9 +3,9 @@ import { FindUserService } from './findUserService';
 
 
 export class FindUserController {
-  constructor(private findUserservice: FindUserService) {}
+  constructor(private findUserservice: FindUserService) { }
 
-  async index(request: Request, response: Response): Promise<Response>{
+  async index(request: Request, response: Response): Promise<Response> {
 
     const { name } = request.body
 
@@ -14,5 +14,5 @@ export class FindUserController {
     const result = await findUserservice.execute({ name })
 
     return response.json(result)
-}
+  }
 }

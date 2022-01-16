@@ -4,22 +4,10 @@ import AuthConfig from '../../../config/auth';
 import AppError from '../../../shared/http/errors/AppError';
 import AccessUserSchema from '../../../shared/infra/database/mongoDB/models/Access';
 import { prisma } from "../../../shared/infra/database/prisma/prismaClient";
+import { IAuthRequest, IAuthResponse } from "./AuthUserDTO";
 
-
-interface Request {
-    email: string;
-    password: string;
-    latitude: number, 
-    longitude: number
-}
-
-interface Response {
-    user: Object,
-    token: string
-}
-
-export class AuthenticatedUserService {
-    public async execute({ email, password, latitude, longitude }: Request): Promise<Response>{
+export class AuthUserService {
+    public async execute({ email, password, latitude, longitude }: IAuthRequest): Promise<IAuthResponse>{
 
         let dataAtual = new Date();
         
@@ -30,22 +18,21 @@ export class AuthenticatedUserService {
         });
 
         if(!user){
-            throw new AppError("Incorrect email/password combination.", 401, { reason: 'O usuario nao existe.' });
+            throw new AppError("Incorrect email/password combination.", 401);
         }
 
         const isPasswordValid = await compare(password, user.password);
 
         if(!isPasswordValid){
-            throw new AppError("Incorrect email/password combination.", 401, { reason: 'A senha do usuário está incorreta.' });
+            throw new AppError("Incorrect email/password combination.", 401);
         }
-
+        
         const location = {
             type: 'Point',
             coordinates: [longitude, latitude],
           };
 
         try {
-
             let access = await AccessUserSchema.findOne({ user_id: user.id });
 
             if(!access){        

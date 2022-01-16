@@ -1,6 +1,6 @@
 import cron from 'node-cron';
-import AccessSchema from '../infra/database/mongoDB/models/Access';
-import ErrorsSchema from '../infra/database/mongoDB/models/Error';
+import AccessSchema from '../models/Access';
+import ErrorsSchema from '../models/Error';
 
 /*
 
