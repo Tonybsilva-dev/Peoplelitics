@@ -1,14 +1,25 @@
-import { Router } from 'express';
+import { Request, Response, Router } from 'express';
 import ensureAuthenticated from '../../../shared/http/middlewares/ensureAuthenticated';
-import { ACLController } from '../controller';
-
-const aclController = new ACLController;
+import { createPermissionController } from '../useCases/createPermissions.ts';
+import { createRoleController, createRolePermissionsController } from '../useCases/createRoles';
+import { createUserAccessControlListController } from '../useCases/createUserAccessControlList';
 
 const aclRouter = Router();
 
-aclRouter.post('/user/:id_user', ensureAuthenticated, aclController.createUserACL)
-aclRouter.post('/role', ensureAuthenticated, aclController.createRole)
-aclRouter.post('/permission', ensureAuthenticated, aclController.createPermission)
-aclRouter.post('/role-permissions/:id_role', ensureAuthenticated, aclController.createPermissionsRole)
+aclRouter.post('/role', ensureAuthenticated, (request: Request, response: Response) => {
+    return createRoleController.store(request, response);
+});
+
+aclRouter.post('/permission', ensureAuthenticated, (request: Request, response: Response) => {
+    return createPermissionController.store(request, response);
+});
+
+aclRouter.post('/role-permissions/:idRole', ensureAuthenticated, (request: Request, response: Response) => {
+    return createRolePermissionsController.store(request, response);
+});
+
+aclRouter.post('/:idUser', ensureAuthenticated, (request: Request, response: Response) => {
+    return createUserAccessControlListController.store(request, response);
+});
 
 export { aclRouter };

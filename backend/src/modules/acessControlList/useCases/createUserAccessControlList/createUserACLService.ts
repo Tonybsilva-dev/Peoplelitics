@@ -1,15 +1,10 @@
 import AppError from '../../../../shared/http/errors/AppError';
 import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
-
-interface IUserACLRequest {
-    id: string;
-    roles: string[];
-    permissions: string[];
-  }
+import { IUserACLRequestDTO } from './createUserACLDTO';
 
 class CreateUserAccessControlListService {
 
-    async execute({ id, roles, permissions }: IUserACLRequest ){
+    async execute({ id, roles, permissions }: IUserACLRequestDTO) {
 
         const user = await prisma.users.findFirst({
             where: {
@@ -17,21 +12,21 @@ class CreateUserAccessControlListService {
             }
         });
 
-        if (!user){
-            throw new AppError("User does not exists", 404, { reason: 'O usuario nao existe.' });
+        if (!user) {
+            throw new AppError("User does not exists");
         }
-           
-        let dataPermissions : any = []
-        permissions.map(permission => dataPermissions.push({id_permission: permission, id_user:id})
+
+        let dataPermissions: any = []
+        permissions.map(permission => dataPermissions.push({ id_permission: permission, id_user: id })
         )
-        
+
         await prisma.usersPermissions.createMany({
             data: dataPermissions,
             skipDuplicates: true,
         })
-        
-        let dataRoles : any = []
-        roles.map(role => dataRoles.push({id_role: role, id_user: id})
+
+        let dataRoles: any = []
+        roles.map(role => dataRoles.push({ id_role: role, id_user: id })
         )
 
         await prisma.usersRoles.createMany({

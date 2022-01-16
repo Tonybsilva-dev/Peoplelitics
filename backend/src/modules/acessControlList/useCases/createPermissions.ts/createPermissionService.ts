@@ -13,7 +13,7 @@ class CreatePermissionService {
 
         const checkPermissionsExists = await prisma.permissions.findFirst({
             where: {
-                name: name
+                name: name.toUpperCase()
             }
         });
 
