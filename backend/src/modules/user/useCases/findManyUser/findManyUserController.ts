@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
-import { FindUserService } from './findUserService';
+import { FindManyUserService } from './findManyUserService';
 
 
-export class FindUserController {
-  constructor(private findUserservice: FindUserService) { }
+export class FindManyUserController {
+  constructor(private findUserservice: FindManyUserService) { }
 
   async index(request: Request, response: Response): Promise<Response> {
 
     const { name } = request.body
 
-    const findUserservice = new FindUserService;
+    const findUserservice = new FindManyUserService;
 
     const result = await findUserservice.execute({ name })
 
