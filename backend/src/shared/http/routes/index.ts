@@ -1,10 +1,8 @@
 import { Router } from 'express';
-import { aclRouter } from '../../../modules/acessControlList/infra/http/routes/acl.routes';
-import { authRouter } from '../../../modules/auth/infra/http/routes/auth.routes';
-import { usersRouter } from '../../../modules/user/infra/http/routes/users.routes';
-import '../../scripts/EraserHead';
-
-
+import { aclRouter } from '../../../modules/acessControlList/routes/acl.routes';
+import { authRouter } from '../../../modules/auth/routes/auth.routes';
+import { usersRouter } from '../../../modules/user/routes/users.routes';
+import '../../infra/database/mongoDB/scripts/EraserHead';
 
 const routes = Router();
 
