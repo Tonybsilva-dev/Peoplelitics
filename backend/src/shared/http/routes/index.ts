@@ -4,8 +4,6 @@ import { authRouter } from '../../../modules/auth/routes/auth.routes';
 import { usersRouter } from '../../../modules/user/routes/users.routes';
 import '../../infra/database/mongoDB/scripts/EraserHead';
 
-
-
 const routes = Router();
 
 routes.use('/users', usersRouter);
