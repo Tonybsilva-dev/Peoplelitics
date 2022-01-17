@@ -7,12 +7,12 @@ export class FindManyUserController {
 
   async index(request: Request, response: Response): Promise<Response> {
 
-    const { name } = request.body
+    const { name } = request.body;
 
     const findManyUserService = new FindManyUserService;
 
-    const result = await findManyUserService.execute({ name })
+    const result = await findManyUserService.execute({ name });
 
-    return response.json(result)
+    return response.json(result);
   }
 }

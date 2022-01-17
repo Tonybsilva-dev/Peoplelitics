@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { FindUserService } from './findUserService'
 
 export class FindUserController {
-    constructor (private FindUserUseCase: FindUserService){}
+    constructor (private findUserUseCase: FindUserService){}
 
     async indexOne(request: Request, response: Response){
 
@@ -10,8 +10,8 @@ export class FindUserController {
 
         const findUserService = new FindUserService;
 
-        const result = await findUserService.execute({ email })
+        const result = await findUserService.execute({ email });
 
-        return response.json(result)
+        return response.json(result);
     }
 }
