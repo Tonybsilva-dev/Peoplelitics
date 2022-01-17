@@ -1,12 +1,11 @@
-import { FindUserController } from "./findUserController";
-import { FindUserService } from "./findUserService";
+import { FindUserController } from './findUserController';
+import { FindUserService } from './findUserService';
 
 
-
-const findUserService = new FindUserService()
+const findUserService = new FindUserService();
 
 const findUserController = new FindUserController(
     new FindUserService
 )
 
-export { findUserController, findUserService };
+export { findUserService, findUserController }

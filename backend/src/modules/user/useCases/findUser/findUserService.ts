@@ -1,16 +1,17 @@
 import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
-import { IfindUserDTO } from './findUserDTO';
+import { findUserDTO } from './findUserDTO'
+
 
 export class FindUserService {
-    async execute({ name }: IfindUserDTO){
-        const findUserExists = await prisma.users.findMany({
+    
+    async execute({ email }: findUserDTO){
+
+        const findUserExists = await prisma.users.findFirst({
             where: {
-                name: {
-                    contains: name,
-                    mode: "insensitive",
-                }
+                email
             }
         });
-        return findUserExists;
+
+        return findUserExists || [];
     }
 }
