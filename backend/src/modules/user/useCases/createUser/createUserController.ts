@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
+import { IMailProvider } from "../../../../shared/infra/mail/providers/IMailProvider";
 import { CreateUserService } from "./createUserService";
 
 
 export class CreateUserController {
 
-    constructor(private createUserUseCase: CreateUserService) {}
+    constructor(private createUserUseCase: CreateUserService, private mailProvider: IMailProvider) {}
 
     async store(request: Request, response: Response) {
             const { name, email, password } = request.body
