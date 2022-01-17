@@ -1,5 +1,6 @@
 import { Request, Response, Router } from "express";
 import { createUserController } from '../useCases/createUser';
+import { deleteUserController } from "../useCases/deleteUser";
 import { findManyUserController } from "../useCases/findManyUser";
 import { findUserController } from "../useCases/findUser";
 
@@ -15,6 +16,10 @@ usersRouter.post('/find', (request: Request, response: Response) => {
 
 usersRouter.post('/find/:email', (request: Request, response: Response) => {
     return findUserController.indexOne(request, response)
+})
+
+usersRouter.delete('/:email', (request: Request, response: Response) => {
+    return deleteUserController.delete(request, response)
 })
 
 export { usersRouter };

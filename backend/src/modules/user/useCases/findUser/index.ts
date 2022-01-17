@@ -8,4 +8,4 @@ const findUserController = new FindUserController(
     new FindUserService
 )
 
-export { findUserService, findUserController}
+export { findUserService, findUserController }

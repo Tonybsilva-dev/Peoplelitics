@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { FindUserService } from './findUserService'
 
 export class FindUserController {
-    constructor (private FindUserService: FindUserService){}
+    constructor (private FindUserUseCase: FindUserService){}
 
     async indexOne(request: Request, response: Response){
 

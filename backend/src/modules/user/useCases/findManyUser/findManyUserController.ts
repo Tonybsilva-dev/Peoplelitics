@@ -3,7 +3,7 @@ import { FindManyUserService } from './findManyUserService';
 
 
 export class FindManyUserController {
-  constructor(private FindManyUserService: FindManyUserService) { }
+  constructor(private findManyUserUseCase: FindManyUserService) { }
 
   async index(request: Request, response: Response): Promise<Response> {
 
