@@ -44,20 +44,26 @@ export class CreateUserService {
             }
         })
 
-        const mailProvider =  new MailtrapMailProvider()
+        try {
+            const mailProvider =  new MailtrapMailProvider()
 
-        await mailProvider.sendMail({
-            to: {
-              name: name,
-              email: email,
-            },
-            from: {
-              name: 'Equipe do PeopleLitics',
-              email: 'equipe@meuapp.com',
-            },
-            subject: 'Seja bem-vindo à plataforma do Peoplelitics',
-            body: '<p>Você já pode fazer login em nossa plataforma.</p>'
-          })
+            await mailProvider.sendMail({
+                to: {
+                  name: name,
+                  email: email,
+                },
+                from: {
+                  name: 'Equipe do PeopleLitics',
+                  email: 'equipe@peoplelitics.com',
+                },
+                subject: `Seja bem-vindo ${ user.name } à plataforma do Peoplelitics`,
+                body: '<h2>Você já pode fazer login em nossa plataforma.</h2>'
+              })
+        } catch (error) {
+            throw new AppError('Email nao enviado.')
+        }
+
+       
 
         return user;
     }
