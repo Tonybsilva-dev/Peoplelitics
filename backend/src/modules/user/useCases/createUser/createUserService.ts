@@ -16,7 +16,7 @@ export class CreateUserService {
 
         if (emailAlredyExists){
             throw new AppError('Email already exists')
-        }
+        };
         
         const nameAlredyExists = await prisma.users.findFirst({
             where: {
@@ -26,15 +26,15 @@ export class CreateUserService {
 
         if (nameAlredyExists){
             throw new AppError('Name already exists')
-        }
+        };
 
-        const checkPass = checkPasswordSecurity(password)
+        const checkPass = checkPasswordSecurity(password);
 
         if(!checkPass){
             throw new AppError('Your password does not meet the minimum requirements.')
-        }
+        };
 
-        const hashPassword = await hash(password, 10)
+        const hashPassword = await hash(password, 10);
 
         const user = await prisma.users.create({
             data: {
@@ -42,7 +42,7 @@ export class CreateUserService {
                 email: email.toLowerCase(),
                 password: hashPassword,
             }
-        })
+        });
 
         try {
             const mailProvider =  new MailtrapMailProvider()

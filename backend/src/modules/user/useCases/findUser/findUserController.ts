@@ -1,18 +1,17 @@
 import { Request, Response } from 'express';
-import { FindUserService } from './findUserService';
-
+import { FindUserService } from './findUserService'
 
 export class FindUserController {
-  constructor(private findUserservice: FindUserService) { }
+    constructor (private findUserUseCase: FindUserService){}
 
-  async index(request: Request, response: Response): Promise<Response> {
+    async indexOne(request: Request, response: Response){
 
-    const { name } = request.body
+        const { email } = request.params;
 
-    const findUserservice = new FindUserService;
+        const findUserService = new FindUserService;
 
-    const result = await findUserservice.execute({ name })
+        const result = await findUserService.execute({ email });
 
-    return response.json(result)
-  }
+        return response.json(result);
+    }
 }

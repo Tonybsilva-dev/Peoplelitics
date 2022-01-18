@@ -8,18 +8,37 @@ datasource db {
 }
 
 model Users {
-  id          String             @id @default(uuid())
-  name        String
-  email       String             @unique
-  password    String
-  avatar      String?
-  created_at  DateTime           @default(now())
-  updated_at  DateTime           @default(now())
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  password   String
+  avatar     String?
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  street     String?
+  suite      String?
+  city       String?
+  zipcode    String?
+  lat        Float?
+  log        Float?
+  doc        Int?     @unique
+  isActive   Boolean  @default(true)
+
+  phones      UsersPhones[]
   permissions UsersPermissions[]
   roles       UsersRoles[]
   mails       MailUsers[]
 
   @@map("users")
+}
+
+model UsersPhones {
+  id_user String
+  user    Users  @relation(fields: [id_user], references: [id])
+  phone   String
+
+  @@id([id_user, phone])
+  @@map("users_phones")
 }
 
 model Roles {
@@ -92,8 +111,8 @@ model Mails {
   description String
   created_at  DateTime @default(now())
 
-  @@map("mail")
   MailUsers MailUsers[]
+  @@map("mail")
 }
 
 model MailUsers {
