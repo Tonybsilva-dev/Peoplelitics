@@ -1,8 +1,6 @@
 ## Recursos do Backend
 > Implementados até o momento / Em desenvolvimento
 
-### Recursos Implementados
-
 ```
 - [x] Criar usuário
 - [x] Listar usuários
