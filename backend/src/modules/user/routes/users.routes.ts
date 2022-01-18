@@ -5,6 +5,14 @@ import { deleteUserController } from "../useCases/deleteUser";
 import { findManyUserController } from "../useCases/findManyUser";
 import { findUserController } from "../useCases/findUser";
 import { updateUserController } from "../useCases/updateUser";
+import { uploadAvatarUserController } from "../useCases/uploadAvatarUser";
+
+import multer from 'multer';
+import UploadConfig from '../../../config/uploads';
+import { updateUserPasswordController } from "../useCases/updateUserPassword";
+
+
+const uploadAvatar = multer(UploadConfig);
 
 
 const usersRouter = Router();
@@ -27,6 +35,14 @@ usersRouter.delete('/:email', (request: Request, response: Response) => {
 
 usersRouter.put('/', ensureAuthenticated, (request: Request, response: Response) => {
     return updateUserController.update(request, response);
+})
+
+usersRouter.patch('/avatar', ensureAuthenticated, uploadAvatar.single('avatar'), (request: Request, response: Response) => {
+    return uploadAvatarUserController.upload(request, response);
+})
+
+usersRouter.put('/settings/security', ensureAuthenticated, async (request: Request, response: Response) => {
+    return updateUserPasswordController.update(request, response);
 })
 
 export { usersRouter };
