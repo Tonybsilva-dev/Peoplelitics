@@ -1,23 +1,16 @@
-import { prisma } from '../../../../../shared/infra/database/prismaClient';
+import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
+import { IFindManyUserDTO } from './findManyUserDTO';
 
-
-interface findUser {
-    name: string,
-}
-
-export class FindUserService {
-    async execute({ name }: findUser){
-
+export class FindManyUserService {
+    async execute({ name }: IFindManyUserDTO){
         const findUserExists = await prisma.users.findMany({
             where: {
                 name: {
                     contains: name,
                     mode: "insensitive",
-
                 }
             }
         });
-
         return findUserExists;
     }
 }
