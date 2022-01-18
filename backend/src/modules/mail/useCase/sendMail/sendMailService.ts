@@ -2,10 +2,9 @@ import fs from 'fs';
 import handlebars from 'handlebars';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
-import { IMailProvider, IMessage } from './providers/IMailProvider';
 
+class SendMailService {
 
-export class MailtrapMailProvider implements IMailProvider {
   private transporter: Mail;
 
   constructor() {
@@ -20,7 +19,6 @@ export class MailtrapMailProvider implements IMailProvider {
   }
 
   async execute(to: string, subject: string, variables: object, path: string){
-
     // const npsPath = resolve(__dirname, "..", "views", "emails", "npsMail.hbs")
     const templateFileContent = fs.readFileSync(path).toString('utf8')
 
@@ -32,27 +30,12 @@ export class MailtrapMailProvider implements IMailProvider {
       to,
       subject,
       html: html,
-      from: "NPS <noreplay@nps.com.br>"
+      from: "Peoplelitics <noreplay@peoplelitics.com.br>"
     })
 
     console.log('Message sent: %s', message.messageId);
-    // Pré-visualização disponível apenas ao enviar através de uma conta Ethereal
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(message));
-
   }
 
-async sendMail(message: IMessage): Promise<void> {
-    await this.transporter.sendMail({
-      to: {
-        name: message.to.name,
-        address: message.to.email,
-      },
-      from: {
-        name: message.to.name,
-        address: message.to.email,
-      },
-      subject: message.subject,
-      html: message.body,
-    });
-  }
 }
+
+export { SendMailService };

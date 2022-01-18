@@ -13,15 +13,15 @@ usersRouter.post('/', (request: Request, response: Response) => {
     return createUserController.store(request, response);
 });
 
-usersRouter.post('/find', (request: Request, response: Response) => {
+usersRouter.post('/find', ensureAuthenticated, (request: Request, response: Response) => {
     return findManyUserController.index(request, response);
 })
 
-usersRouter.post('/find/:email', (request: Request, response: Response) => {
+usersRouter.post('/find/:email', ensureAuthenticated, (request: Request, response: Response) => {
     return findUserController.indexOne(request, response);
 })
 
-usersRouter.delete('/:email', (request: Request, response: Response) => {
+usersRouter.delete('/:email', ensureAuthenticated, (request: Request, response: Response) => {
     return deleteUserController.delete(request, response);
 })
 
