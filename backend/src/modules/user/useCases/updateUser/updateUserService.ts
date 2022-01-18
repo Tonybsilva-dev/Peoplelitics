@@ -3,15 +3,20 @@ import { IUpdateUserDTO } from './updateUserDTO'
 
 export class UpdateUserService {
 
-    public async update({ email, name, userID }: IUpdateUserDTO){
+    public async update({ email, name, city, street, suite, zipcode, doc, userID }: IUpdateUserDTO){
 
         const userUpdate = await prisma.users.update({
             where: { 
                 id: userID,
             },
             data:{
+                name,
                 email, 
-                name
+                street,
+                suite,
+                city,
+                zipcode,
+                doc
             }
         })
 
