@@ -40,22 +40,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<!--
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
-
-### Built With
-
-* []()
-* []()
-* []()
-
--->
+Peoplelitics is a platform where you can register municipal political to-dos and list them based on geolocation, clearly describing to users when a "To Do" was started, its status and description! helping to clarify the remaining municipal pending issues.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -91,6 +77,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 -->
 _For more examples, please refer to the [Documentation](https://example.com)_
+> Comming Soon
 
 
 
