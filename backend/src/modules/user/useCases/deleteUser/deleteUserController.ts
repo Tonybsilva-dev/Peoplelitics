@@ -9,10 +9,10 @@ export class DeleteUserController{
 
         const { email } = request.params;
 
-        const deleteUserService = new DeleteUserService
+        const deleteUserService = new DeleteUserService();
 
-        const result = await deleteUserService.delete({ email })
+        await deleteUserService.delete({ email });
 
-        return response.json({message:'User has been Deleted'})
+        return response.json({message:'User has been Deleted'});
     }
 }

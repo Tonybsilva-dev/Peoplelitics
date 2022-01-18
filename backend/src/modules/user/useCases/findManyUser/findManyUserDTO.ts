@@ -1,3 +1,3 @@
-export interface IfindManyUserDTO {
-    name: string
+export interface IFindManyUserDTO {
+    name: string;
 }

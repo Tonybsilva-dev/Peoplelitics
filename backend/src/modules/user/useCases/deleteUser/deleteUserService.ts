@@ -1,31 +1,31 @@
 import { prisma } from '../../../../shared/infra/database/prisma/prismaClient';
-import { deleteUserDTO } from './deleteUserDTO';
+import { IDeleteUserDTO } from './deleteUserDTO';
 import { checkValidEmail } from '../../../utils/checkValidEmail';
 import  AppError  from '../../../../shared/http/errors/AppError';
 
 export class DeleteUserService {
 
-    public async delete({ email }: deleteUserDTO){
+    public async delete({ email }: IDeleteUserDTO){
 
-        const checkEmail = checkValidEmail(email)
+        const checkEmail = checkValidEmail(email);
 
         if(!checkEmail){
-            throw new AppError('Your email does not match.',  400, { reason: 'Não é um email válido.' })
-        }
+            throw new AppError('Your email does not match.')
+        };
 
         const emailAlredyExists = await prisma.users.findFirst({
             where: {
-                email: email
+                email,
             }
         });
 
         if (!emailAlredyExists){
-            throw new AppError('Email not exists', 400, { reason: 'O email solicitado não existe' })
-        }
+            throw new AppError('Email not exists')
+        };
 
-        const deleteUser = await prisma.users.delete({ 
+        await prisma.users.delete({ 
             where:{
-                email: email
-        } }) 
+                email,
+        } });
     }
 } 

@@ -1,3 +1,3 @@
-export interface deleteUserDTO{
+export interface IDeleteUserDTO{
     email: string;
 }
