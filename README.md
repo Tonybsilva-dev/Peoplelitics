@@ -153,12 +153,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ### Author
----
-
-<a href="https://dev.to/tonybsilvadev/">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54373473?v=4" width="150px;" alt=""/>
- <br />
- <sub><b>Antônio Bernardino da Silva</b></sub></a> <a href="https://dev.to/tonybsilvadev/" title="Medium".</a>
+--- 
+ <table>
+  <tr>
+    <td align="center"><a href="https://github.com/Lucianjfc"><img src="https://avatars.githubusercontent.com/u/54373473?v=4" width="100px;" alt=""/><br /><sub><b>Antonio Silva</b></sub></a><br /><a href="https://github.com/Tonybsilva-dev/Peoplelitics/commits?author=Tonybsilva-dev" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3ATonybsilva-dev" title="Reviewed Pull Requests">👀</a></td>
+ </tr>
+</table>
 
 ### Contributors
 ---
