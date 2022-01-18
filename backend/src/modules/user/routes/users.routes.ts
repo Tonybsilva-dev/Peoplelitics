@@ -4,11 +4,12 @@ import { createUserController } from '../useCases/createUser';
 import { deleteUserController } from "../useCases/deleteUser";
 import { findManyUserController } from "../useCases/findManyUser";
 import { findUserController } from "../useCases/findUser";
-import { updateUserController} from "../useCases/updateUser";
+import { updateUserController } from "../useCases/updateUser";
 import { uploadAvatarUserController } from "../useCases/uploadAvatarUser";
 
 import multer from 'multer';
 import UploadConfig from '../../../config/uploads';
+import { updateUserPasswordController } from "../useCases/updateUserPassword";
 
 
 const uploadAvatar = multer(UploadConfig);
@@ -38,6 +39,10 @@ usersRouter.put('/', ensureAuthenticated, (request: Request, response: Response)
 
 usersRouter.patch('/avatar', ensureAuthenticated, uploadAvatar.single('avatar'), (request: Request, response: Response) => {
     return uploadAvatarUserController.upload(request, response);
+})
+
+usersRouter.put('/settings/security', ensureAuthenticated, async (request: Request, response: Response) => {
+    return updateUserPasswordController.update(request, response);
 })
 
 export { usersRouter };
