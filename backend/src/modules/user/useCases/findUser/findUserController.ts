@@ -4,7 +4,7 @@ import { FindUserService } from './findUserService'
 export class FindUserController {
     constructor (private findUserUseCase: FindUserService){}
 
-    async indexOne(request: Request, response: Response){
+    async index(request: Request, response: Response){
 
         const { email } = request.params;
 
