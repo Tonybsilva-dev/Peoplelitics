@@ -18,7 +18,7 @@ usersRouter.post('/find', (request: Request, response: Response) => {
 })
 
 usersRouter.post('/find/:email', (request: Request, response: Response) => {
-    return findUserController.indexOne(request, response);
+    return findUserController.index(request, response);
 })
 
 usersRouter.delete('/:email', (request: Request, response: Response) => {

@@ -8,11 +8,11 @@ export class UpdateUserController{
 
         const userID = request.user.id
 
-        const { name, email } = request.body;
+        const { name, email, city, street, suite, zipcode, doc } = request.body;
 
         const updateUserService = new UpdateUserService()
         
-        const result = await updateUserService.update({ name, email, userID})
+        const result = await updateUserService.update({ name, email, city, street, suite, zipcode, doc, userID})
 
         return response.json(result)
     }
