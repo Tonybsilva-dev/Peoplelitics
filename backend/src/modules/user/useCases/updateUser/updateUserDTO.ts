@@ -6,5 +6,5 @@ export interface IUpdateUserDTO {
     suite?: string,
     city?: string,
     zipcode?: string,
-    doc?: number,
+    doc?: string,
 }

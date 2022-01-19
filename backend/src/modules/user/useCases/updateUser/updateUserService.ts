@@ -16,7 +16,7 @@ export class UpdateUserService {
                 suite,
                 city,
                 zipcode,
-                doc : doc
+                doc
             }
         })
 
