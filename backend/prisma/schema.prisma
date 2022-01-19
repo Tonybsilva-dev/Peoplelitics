@@ -21,7 +21,7 @@ model Users {
   zipcode    String?
   lat        Float?
   log        Float?
-  doc        Int?     @unique
+  doc        String?     @unique
   isActive   Boolean  @default(true)
 
   phones      UsersPhones[]
